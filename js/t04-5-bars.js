@@ -16,7 +16,7 @@ const createBarChart = (data) => {
     const xMax = d3.max(data, d => d.count);
     const xScale = d3.scaleLinear()
         .domain([0, xMax])
-        .range([0, viewW]);
+        .range([0, viewW - 100]); // leave space for labels
     const yScale = d3.scaleBand()
         .domain(data.map(d => d.brand)) 
         .range([0, viewH])
